@@ -1,0 +1,11 @@
+<h2>- Restaurants:</h2>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <h5 class="restaurants"> <i class="fas fa-utensils"></i>
+    <%restaurant.avg_review.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+     <%=  link_to restaurant.name, restaurant_path(restaurant), :class => "restaurant" %></h5>
+  <% end %>
+</ul>
+<button type="button" class="btn btn-success float-right"><%= link_to "Create restaurant", new_restaurant_path, :class => "button" %></button>
